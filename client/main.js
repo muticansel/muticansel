@@ -7,6 +7,7 @@ $(document).ready(function () {
         disableWeekends: true
     })
     $('.scrollspy').scrollSpy()
+    $('.tooltipped').tooltip();
 
     $(window).scroll(function() {
         const navHeight = $('nav').height()
