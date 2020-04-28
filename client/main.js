@@ -9,6 +9,11 @@ $(document).ready(function () {
     $('.scrollspy').scrollSpy()
     $('.tooltipped').tooltip();
 
+    $('.carousel.carousel-slider').carousel({
+        fullWidth: true,
+        indicators: true
+      });
+
     $(window).scroll(function() {
         const navHeight = $('nav').height()
         if($(document).scrollTop() > navHeight){
