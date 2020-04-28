@@ -7,4 +7,19 @@ $(document).ready(function () {
         disableWeekends: true
     })
     $('.scrollspy').scrollSpy()
+
+    $(window).scroll(function() {
+        const navHeight = $('nav').height()
+        if($(document).scrollTop() > navHeight){
+            $('.stickyBtn').fadeIn();
+        } else {
+            $('.stickyBtn').fadeOut();
+        }
+    })
+
+    $('.stickyBtn').on('click', function() {
+        $('html, body').animate({
+            scrollTop: 0
+        }, 800)
+    })
 })
