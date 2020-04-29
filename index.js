@@ -11,8 +11,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static('client'));
 
-//test
-
 app.post('/sendMail', (req, res) => {
     const { email, message, date } = req.body;
 
