@@ -12,18 +12,18 @@ $(document).ready(function () {
     $('.carousel.carousel-slider').carousel({
         fullWidth: true,
         indicators: true
-      });
+    });
 
-    $(window).scroll(function() {
+    $(window).scroll(function () {
         const navHeight = $('nav').height()
-        if($(document).scrollTop() > navHeight){
+        if ($(document).scrollTop() > navHeight) {
             $('.stickyBtn').fadeIn();
         } else {
             $('.stickyBtn').fadeOut();
         }
     })
 
-    $('.stickyBtn').on('click', function() {
+    $('.stickyBtn').on('click', function () {
         $('html, body').animate({
             scrollTop: 0
         }, 800)
