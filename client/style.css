@@ -25,11 +25,18 @@ header {
     right: 1rem;
 }
 
+.card-contact {
+    width: 75%
+}
+
 @media screen and (max-width: 670px) {
     header {
         min-height: 500px;
         background: url(img/mobileBg.jpeg);
         background-position: center;
+    }
+    .card-contact {
+        width: 100%
     }
 }
 
@@ -42,6 +49,14 @@ header {
   
 .circle {
     stroke: #4CC790;
+    fill: none;
+    stroke-width: 2.8;
+    stroke-linecap: round;
+    animation: progress 1s ease-out forwards;
+}
+
+.circle-red {
+    stroke: rgb(235, 52, 52);
     fill: none;
     stroke-width: 2.8;
     stroke-linecap: round;
