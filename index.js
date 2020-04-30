@@ -1,12 +1,14 @@
 var PORT = process.env.PORT || 5000
 var express = require('express');
 const bodyParser = require('body-parser');
+var cors = require('cors');
 const nodemailer = require('nodemailer');
 var app = express();
 
 var http = require('http');
 var server = http.Server(app);
 
+app.use(cors())
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static('client'));
@@ -24,8 +26,7 @@ app.post('/sendMail', (req, res) => {
         <h3>Message</h3>
         <p>${message}</p>
     `
-
-    console.log(email, message, date)
+    
     let transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
@@ -45,7 +46,7 @@ app.post('/sendMail', (req, res) => {
         if (err) {
             console.log('Error Occurs', err);
         } else {
-            console.log('Email sent successfully')
+            res.redirect('/')
         }
     })
 })
